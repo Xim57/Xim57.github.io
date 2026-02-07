@@ -48,7 +48,125 @@
           border: none;
           border-radius: 50px;
           cursor: pointer;
-          transition: transform 0.2s, background-color 0.2;
+          transition: transform 0.2s, background-color 0.2s;
       }
+
+      #yes-btn {
+          background-color: #4CAF50;
+          color: white;
+          font-weight: bold;
+      }
+
+      #yes-btn:hover {
+          background-color: #45a049;
+          transform: scale(1.05);
+      }
+
+      #no-btn {
+          background-color: #f44336;
+          color: white;
+          font-weight: bold;
+      }
+
+      .hiden {
+          display: none;
+      }
+
+      .heart {
+          position: absolute;
+          bottom: -50px;
+          color: #ff4081;
+          font-size: 20px;
+          animation: floatingUp 5s linear infinite;
+          opacity: 0.8;
+          z-index: 1;
+      }
+
+      @keyframes floatUp {
+          0% {
+              transform: translateY(0) scale(1);
+              opacity: 0.8;
+          }
+          100% {
+              transform: translateY(-110vh) scale(1.5);
+              opacity: 0;
+          }
+      }
+  </style>
+</head>
+<body>
+
+  <div id="hearts-container"></div>div>
+
+  <div class="container" id="question-page">
+      <h1>May I be your Valentine? 🌹</h1>
+      <div class="btn-group">
+          <button id="yes-btn">Yes</button>
+          <button id="no-btn">No</button>
+      </div>
+  </div>
+
+  <div class="container hidden" id="thank-you-page">
+      <h1>YIPIEEEE!!!! 💗</h1>
+      <p style="font-size: 1.5rem; color: #d32f2f;">THANK YOUU!!!! 🥰</p>
+      <div style="font-size: 5rem; margin-top: 20px;">💙</div>
+  </div>
+
+  <script>
+
+      const yesBtn = document.getElementById('yes-btn');
+      const noBtn = document.getElementById('no-btn');
+      const questionPage = document.getElementById('question-page');
+      const thankYouPage = document.getElementById('thank-you-page');
+
+      let currentScale = 1;
+
+      noBtn.addEventListener('click', () => {
+          currentScale -= 0.2;
+
+          noBtn.style.transform = `scale(${currentScale})`;
+
+          if (currentScale < 0.2) {
+              noBtn.style.display = 'none';
+          }
+      });
+
+      yesBtn.addEventListener('click', () => {
+
+          questionPage.classList.add('hidden');
+
+          thankYouPage.classList.remove('hidden');
+
+          createManyHearts();
+      });
+
+      function createHearts() {
+          const heart = document.createElement('div');
+          heart.classList.add('heart');
+          heart.innerHTML = '🩷';
+
+          heart.style.left = Math.random() * 100 + 'vw';
+          heart.style.animationDuration = Math.random() * 4 + 5 + 's';
+
+          document.body.appendChild(heart);
+
+          setTimeout(() => {
+              heart.remove();
+          }, 5000);
+      }
+
+      setInterval(createHeart, 300);
+
+      function createManyHearts() {
+          for(let i=0; i<30; i++) {
+              setTimeout(createHeart, i * 50);
+          }
+      }
+  </script)
+    
+</body)
+    </html>
+  
+
       
       
