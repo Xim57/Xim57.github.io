@@ -114,7 +114,7 @@
     <div id="hearts-container"></div>
 
     <div class="container" id="question-page">
-        <h1>May I be your Valentine? 🌹</h1>
+        <h1>ARE YOU GONNA PLAY TODAY? 🧐</h1>
         <div class="btn-group">
             <button id="yes-btn">Yes</button>
             <button id="no-btn">No</button>
@@ -122,11 +122,11 @@
     </div>
 
     <div class="container hidden" id="thank-you-page">
-        <h1>YIPPIEEEE! 💖</h1>
-        <p style="font-size: 1.2rem; color: #d32f2f;">THANK YOUUUU! 🥰</p>
+        <h1>YIPPIEEEE! 🥳</h1>
+        <p style="font-size: 1.2rem; color: #d32f2f;">LET ME KNOW WHEN U ON 😼</p>
         
         <div class="gif-container">
-            <img src="https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUycWp5NGR3aTQ0aDF0Mm82cXUzOWJvY2I5MGV5YnlnZ3E1dWtzb3gzMCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/KztT2c4u8mYYUiMKdJ/source.gif" alt="Cute Valentine GIF">
+            <img src="https://media.tenor.com/AU6-SVlvHxIAAAAM/tatatattatatatatatattat.gif" alt="Cat Shooting GIF">
         </div>
     </div>
 
