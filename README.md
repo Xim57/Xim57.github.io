@@ -87,27 +87,7 @@
         }
 
         /* Floating Hearts Animation Background */
-        .heart {
-            position: absolute;
-            bottom: -50px;
-            color: #ff4081;
-            font-size: 24px;
-            animation: floatUp 5s linear infinite;
-            opacity: 0.8;
-            z-index: 1; 
-        }
 
-        @keyframes floatUp {
-            0% {
-                transform: translateY(0) scale(1);
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-110vh) scale(1.5);
-                opacity: 0;
-            }
-        }
-    </style>
 </head>
 <body>
 
@@ -156,24 +136,7 @@
             createManyHearts();
         });
 
-        // Floating hearts logic
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.innerHTML = '❤'; 
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 2 + 3 + 's'; 
-            document.body.appendChild(heart);
-            setTimeout(() => { heart.remove(); }, 5000);
-        }
-
-        setInterval(createHeart, 300);
-
-        function createManyHearts() {
-            for(let i=0; i<30; i++) {
-                setTimeout(createHeart, i * 50);
-            }
-        }
+    
     </script>
 
 </body>
