@@ -87,14 +87,34 @@
         }
 
         /* Floating Hearts Animation Background */
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            color: #ff4081;
+            font-size: 24px;
+            animation: floatUp 5s linear infinite;
+            opacity: 0.8;
+            z-index: 1; 
+        }
 
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-110vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <div id="hearts-container"></div>
 
     <div class="container" id="question-page">
-        <h1>ARE YOU GONNA PLAY TODAY? 🧐</h1>
+        <h1>May I be your Valentine? 🌹</h1>
         <div class="btn-group">
             <button id="yes-btn">Yes</button>
             <button id="no-btn">No</button>
@@ -102,11 +122,11 @@
     </div>
 
     <div class="container hidden" id="thank-you-page">
-        <h1>YIPPIEEEE! 🥳</h1>
-        <p style="font-size: 1.2rem; color: #d32f2f;">LET ME KNOW WHEN U ON 😼</p>
+        <h1>YIPPIEEEE! 💖</h1>
+        <p style="font-size: 1.2rem; color: #d32f2f;">THANK YOUUUU! 🥰</p>
         
         <div class="gif-container">
-            <img src="https://media.tenor.com/AU6-SVlvHxIAAAAM/tatatattatatatatatattat.gif" alt="Cat Shooting GIF">
+            <img src="https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUycWp5NGR3aTQ0aDF0Mm82cXUzOWJvY2I5MGV5YnlnZ3E1dWtzb3gzMCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/KztT2c4u8mYYUiMKdJ/source.gif" alt="Cute Valentine GIF">
         </div>
     </div>
 
@@ -136,7 +156,24 @@
             createManyHearts();
         });
 
-    
+        // Floating hearts logic
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤'; 
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's'; 
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+
+        setInterval(createHeart, 300);
+
+        function createManyHearts() {
+            for(let i=0; i<30; i++) {
+                setTimeout(createHeart, i * 50);
+            }
+        }
     </script>
 
 </body>
